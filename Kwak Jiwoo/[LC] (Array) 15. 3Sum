@@ -1,0 +1,51 @@
+// 세 요소의 인덱스가 서로 다르고, 합이 0인 배열을 모두 구하시오. (세 요소가 모두 중복되는 배열은 x)
+// 참고: https://www.youtube.com/watch?v=jXZDUdHRbhY&t=253s
+
+var threeSum = function (nums) {
+  // 오름차순 정렬 -> 앞쪽의 음수를 L로 놓고, 뒤에서 M & R를 움직일 것임
+  nums.sort((a, b) => a - b);
+
+  let results = [];
+
+  // 예외처리
+  // 1. 요소가 3개 이하면 빈 배열 반환
+  if (nums.length < 3) return results;
+  // 2. 음수가 없으면 빈 배열 반환
+  if (nums[0] > 0) return results;
+
+  // 앞쪽 음수를 L로 고정함
+  for (let L = 0; L < nums.length - 2; L++) {
+    // nums[l]이 양수가 되면 순회 끝 (뒤는 다 양수라서 더해도 0이 안나옴)
+    if (nums[L] > 0) break;
+    // (l이 0인 경우 L-1에서 에러나므로 제외) 다음 nums[L]의 값이 중복되면 똑같은 결과 나오므로 건너뜀
+    if (L > 0 && nums[L] === nums[L - 1]) continue;
+
+    // 다음 인덱스를 M, 맨 끝 인덱스를 R으로 설정
+    let M = L + 1;
+    let R = nums.length - 1;
+
+    // 둘이 서로를 통과할 떄까지 순회
+    while (M < R) {
+      let sum = nums[L] + nums[M] + nums[R];
+
+      if (sum === 0) {
+        results.push([nums[L], nums[M], nums[R]]);
+
+        // 오름차순으로 정렬된 상태이므로 중복된 값이 있다면 M다음이나 R전에 위치함 -> 건너뜀
+        while (nums[M] === nums[M + 1]) M++;
+        while (nums[R] === nums[R - 1]) R--;
+
+        // 다음으로 검색할 포인터로 넘어감
+        M++;
+        R--;
+      }
+
+      // 만약 sum보다 작다면, 더 큰수가 필요하므로 M을 오른쪽으로 옮김
+      else if (sum < 0) M++;
+      // 만약 sum보다 크다면, 더 작은수가 필요하므로 R을 왼쪽으로 옮김
+      else R--; // sum > 0
+    }
+  }
+
+  return results;
+};

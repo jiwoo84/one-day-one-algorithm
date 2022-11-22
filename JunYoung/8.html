@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>8. 일곱난쟁이</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){
+                let answer=arr;  //얕은 복사
+           
+                let hundred = arr.reduce((res,val)=>{
+                        return res+val;
+                }, 0 )
+                  
+
+                for(let i=0;i<8;i++){
+                    for(let j=1;j<9;j++){
+                        if(hundred - (answer[i]+answer[j]) == 100){
+                            answer.splice(j,1);
+                            answer.splice(i,1);
+                        }
+                    }
+                }
+                    return answer;
+            }
+            
+            let arr=[20, 7, 23, 19, 10, 15, 25, 8, 13];
+           
+            console.log(solution(arr));
+            const result = solution(arr).reduce((a,b)=>a+b);
+                console.log(result);
+
+        </script>
+    </body>
+</html>

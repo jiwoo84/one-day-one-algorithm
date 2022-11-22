@@ -1,0 +1,42 @@
+// 가장 긴 회음의 문자열(거꾸로 읽어도 같은)을 반환하시오
+
+var longestPalindrome = function(s) {
+    
+    let max = s.charAt(0)
+    
+    if(s.length === 1) return s;
+    
+    for(let i = 0; i < s.length; i ++) {
+        
+        // 반복되는 문자열의 길이가 홀수일 때
+        let left = i;
+        let right = i+2;
+    
+        while(left >= 0 && right < s.length && s[left] === s[right]) {
+            
+            let chunk = s.slice(left, right+1)
+            if(max.length < chunk.length) max = chunk;
+            
+            left --;
+            right ++;
+        }
+        
+        // 반복되는 문자열의 길이가 짝수일 때
+        left = i;
+        right = i+1;
+    
+        while(left >= 0 && right < s.length && s[left] === s[right]) {
+            
+            let chunk = s.slice(left, right+1)
+            if(max.length < chunk.length) max = chunk;
+            
+            left --;
+            right ++;
+        }        
+        
+    }
+    
+    return max;
+};
+
+// 159ms / 48.9mb

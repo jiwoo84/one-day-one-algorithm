@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>2. 삼각형 판별하기</title>
+    </head>
+    <body>
+        <script>
+            function solution(a, b, c){
+                let max;
+
+                max= Math.max(a,b,c);
+            if(a+b+c-max > max){
+                return "YES";
+            }
+            else{
+                return "NO";
+            }
+
+
+            }
+
+            console.log(solution(6, 7, 11));
+        </script>
+    </body>
+</html>

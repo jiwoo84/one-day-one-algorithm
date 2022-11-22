@@ -4,12 +4,13 @@
 ## 팀원
 <table>
   <tr>
-   <td align="center"><a href="https://github.com/jiwoo84"><img src="https://avatars.githubusercontent.com/u/86906350?v=4" width="100px;" alt=""/><br /><b>Kwak Jiwoo</b></a></td>
-    <td align="center"><a href="https://github.com/bgs-study"><img src="https://avatars.githubusercontent.com/u/79756267?v=4" width="100px;" alt=""/><br /><b>j_wisdom_h</b></a></td>
-    <td align="center"><a href="https://github.com/ubububububub"><img src="https://avatars.githubusercontent.com/u/116259958?v=4" width="100px;" alt=""/><br /><b>ubububububub</b></a></td>
-    <td align="center"><a href="https://github.com/strombreeding"><img src="https://avatars.githubusercontent.com/u/104059932?v=4" width="100px;" alt=""/><br /><b>이진희</b></a></td>
-    <td align="center"><a href="https://github.com/eunbbori"><img src="https://avatars.githubusercontent.com/u/112812483?v=4" width="100px;" alt=""/><br /><b>EUNCHAE KIM</b></a></td>
-    <td align="center"><a href="https://github.com/gimmicks-u"><img src="https://avatars.githubusercontent.com/u/88453103?v=4" width="100px;" alt=""/><br /><b>gimmicks-u</b></a></td>
+   <td align="center"><a href="https://github.com/jiwoo84"><img src="https://avatars.githubusercontent.com/u/86906350?v=4" width="80px;" alt=""/><br /><b>Kwak Jiwoo</b></a></td>
+    <td align="center"><a href="https://github.com/bgs-study"><img src="https://avatars.githubusercontent.com/u/79756267?v=4" width="80px;" alt=""/><br /><b>j_wisdom_h</b></a></td>
+    <td align="center"><a href="https://github.com/ubububububub"><img src="https://avatars.githubusercontent.com/u/116259958?v=4" width="80px;" alt=""/><br /><b>ubububububub</b></a></td>
+    <td align="center"><a href="https://github.com/strombreeding"><img src="https://avatars.githubusercontent.com/u/104059932?v=4" width="80px;" alt=""/><br /><b>이진희</b></a></td>
+    <td align="center"><a href="https://github.com/eunbbori"><img src="https://avatars.githubusercontent.com/u/112812483?v=4" width="80px;" alt=""/><br /><b>EUNCHAE KIM</b></a></td>
+    <td align="center"><a href="https://github.com/gimmicks-u"><img src="https://avatars.githubusercontent.com/u/88453103?v=4" width="80px;" alt=""/><br /><b>gimmicks-u</b></a></td>
+    <td align="center"><a href="https://github.com/junyoung42"><img src="https://avatars.githubusercontent.com/u/80384922?v=4" width="80px;" alt=""/><br /><b>JunYoung</b></a></td>
    
    </tr>
  </table>

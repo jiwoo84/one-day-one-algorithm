@@ -1,0 +1,20 @@
+// coins의 요소 동전을 무한개 가지고 있다고 할 때, amount를 만들 수 있는 동전의 최저 갯수를 구하시오.
+// https://www.youtube.com/watch?v=H9bfqozjoqs 참고
+
+var coinChange = function(coins, amount) {
+    
+    let dp = new Array(amount+1).fill(Infinity);
+    // dp[coins[0]] = 1 이 되야 하므로 초기값 설정
+    dp[0] = 0;
+    
+    for(let i = 1; i <= amount; i ++) {
+        
+        coins.forEach(coin => {
+            if(i - coin >= 0) dp[i] = Math.min(dp[i], dp[i-coin]+1);
+            // ex) dp[6] = 코인 1개(coins 순회) + dp[나머지 금액]
+        })
+    }
+    
+    return dp[amount] !== Infinity ? dp[amount] : -1;
+    // amount가 합칠 수 없는 금액이라면 Infinity임
+};

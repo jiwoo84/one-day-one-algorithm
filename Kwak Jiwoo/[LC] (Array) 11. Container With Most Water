@@ -1,0 +1,67 @@
+// 각 인덱스를 x, 값을 y로 한 통계선을 그렸을 때, 그 안에 물을 담을 수 있는 최대 양을 구하시오.
+
+var maxArea = function(heights) {
+    
+    let max = 0;
+    
+    // 앞에서 높이 측정 -> 뒤에서 해당 높이보다 큰 높이 있으면 멈추고 부피 측정
+    for(let i = 0; i < heights.length-1; i ++ ) {
+        
+        let height = heights[i];
+        let width = 0;
+        
+        for(let j = heights.length - 1; j > i; j-- ) {
+            
+            if(heights[j] >= height) {
+                width = j - i;
+                break;
+            }
+        }
+        
+        max = Math.max(max, height * width);
+    }
+    
+    // 뒤에서 높이 측정 -> 앞에서 해당 높이보다 큰 높이 있으면 멈추고 부피 측정
+    for(let j = heights.length - 1; j > 0; j--) {
+        
+        let height = heights[j];
+        let width = 0;
+        
+        for(let i = 0; i < j; i ++) {
+            
+            if(heights[i] >= height) {
+                width = j - i;
+                break;
+            }
+        }
+        
+        max = Math.max(max, height * width);
+    }
+    
+    return max;
+};
+
+// 396 ms, 49.8mb
+
+// -------------------------------------------------------------------------------------------------------------------------------
+// discuss 참고 풀이
+
+var maxArea = function(height) {
+    
+    let L = 0, R = height.length-1, max = 0;
+    
+    // 시작, 끝에 포인터를 두고 좁혀 나가며 부피 구하기
+    while(L < R) {
+        
+        // 부피값
+        let V = (R - L) * Math.min(height[L], height[R]);
+        
+        // 최대 부피 구함
+        max = Math.max(max, V);
+        
+        // 높이가 작은 포인터를 한 칸 옮김 (큰 것은 이미 받쳐주고 있기에 옮길 필요 X)
+        height[L] >= height[R] ? R-- : L++;
+    }
+    
+    return max;
+};

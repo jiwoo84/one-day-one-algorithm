@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>6. 홀수와 최소</title>
+    </head>
+    <body>
+        <script>
+            arr=[12, 77, 38, 41, 53, 92, 85];
+            function odd_function(arr){
+                const odd = arr.filter((ar)=>{
+                    return ar%2==1;
+                })
+                return odd;
+
+            }
+            const odd = odd_function(arr);
+
+            function odd_max(arr){
+                return arr.reduce((a,b)=>a+b);
+            }
+            function odd_min(arr){
+                return Math.min(...arr);
+                
+            }
+            
+            console.log(odd);
+            console.log(odd_max(odd));
+            console.log(odd_min(odd));
+        </script>
+    </body>
+</html>

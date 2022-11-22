@@ -1,0 +1,69 @@
+// 오름차순으로 정렬된 배열을 n번 왼쪽으로 회전한 상태의 num의 최소값을 구하시오
+
+var findMin = function(nums) {
+    
+    if(nums.length === 1) return nums[0];
+    
+    let index;
+    
+    // 제자리 상태라면
+    if (nums[0] < nums[nums.length-1]) return nums[0];
+    
+    else {
+        let start = 0;
+        let end = nums.length - 1;
+        let mid;
+        
+        while(start <= end) {
+            
+            mid = Math.floor((start+end)/2);
+            
+            // 최소값을 발견했을 때
+            if(nums[mid] > nums[mid+1]) return nums[mid+1];
+            
+            
+            // 최소값이 오른쪽에 있을 때
+            else if(nums[mid] < nums[mid+1] && nums[mid] > nums[0]) {
+                start = mid;
+            }
+            
+            // 최소값이 왼쪽에 있을 때
+            else {
+                end = mid;
+            }
+        }
+    }
+};
+
+// 113ms / 44.5mb
+
+// --------------------------------------------------------------------------------------------------------
+// discuss 참고 풀이
+
+var findMin = function(nums) {
+    
+    if(nums.length === 1) return nums[0];
+    
+    let index;
+    
+    // 제자리 상태
+    if (nums[0] < nums[nums.length-1]) return nums[0];
+
+    let left = 0;
+    let right = nums.length - 1;
+    let mid;
+
+    while(left < right) {
+
+        mid = Math.floor((left+right)/2);
+
+        // left~right이 회전된 않은, 정렬되지 않은 구역 => 최소값은 오른쪽에 있음 (mid는 최소값일 확률이 없으니 mid+1로 left를 이동)
+        if(nums[mid] > nums[right]) left = mid+1;
+        
+        // left~right이 회전되지 않은, 정렬된 구역 => 최소값은 왼쪽에 있음
+        else right = mid;
+    }
+    
+    // 최종적으로 left가 최소값이 됨
+     return nums[left];
+};
