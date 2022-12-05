@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>16. 중복문자제거</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){  
+                let answer="";
+               
+                for(let i=0; i<s.length; i++){
+                    if(s.indexOf(s[i]) === i){
+                        answer +=s[i];
+                    }
+
+                }
+
+                return answer;
+            }
+            console.log(solution("ksekkset"));
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
