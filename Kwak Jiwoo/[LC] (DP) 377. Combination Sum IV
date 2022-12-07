@@ -1,0 +1,33 @@
+// nums 배열 속 요소를 더해서(중복 가능) target을 만들 수 있는 경우의 수 
+
+var combinationSum4 = function(nums, target) {
+    
+    let dp = Array(target+1).fill(0);
+    dp[0] = 1;
+    
+    nums.sort((a,b) => a - b)
+    
+    // dp[target] = dp[target - nums[0]] + dp[target - nums[1]] ...
+    
+    // i = dp의 인덱스 (dp[1] ~ dp[target] 쌓기)
+    for(let i = 1; i <= target; i++) { 
+        
+        let temp = 0;
+        
+        // i에서 뺄 요소 = num[j] 
+        for(let j = 0; j < nums.length; j++) {
+            
+            let num = nums[j];
+            
+            if(num > i) break;
+            
+            temp += dp[i - num]
+        }
+        
+        dp[i] = temp;
+    }
+    
+    return dp[target];
+};
+
+// 90ms / 42.2mb

@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>15. 가운데 문자 출력</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){  
+                let answer='';
+                if(s.length%2==1){
+                    answer = s.charAt(Math.floor(s.length/2));
+                      
+                }
+                else{
+                    answer+=`${s.charAt(s.length/2 -1)}${s.charAt(s.length/2)}`
+                }
+
+                return answer;
+            }
+            console.log(solution("study"));
+            console.log(solution("good"));
+        </script>
+    </body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>17. 중복단어제거</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){  
+                let answer=[];
+                console.log(s);
+
+                for(let i=0; i<s.length-1; i++){
+                    for(let j=1;j<s.length; j++){
+                        if(s[i]===s[j]){
+                            s.splice(j,1);
+                          
+                        }
+                        
+                    }
+                    
+                }
+                console.log(s);
+                
+            }
+            let str=["good", "time", "good", "time", "student" ];
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
+
+
+
+
+
