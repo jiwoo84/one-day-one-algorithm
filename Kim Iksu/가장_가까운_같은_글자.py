@@ -1,3 +1,4 @@
+# https://school.programmers.co.kr/learn/courses/30/lessons/142086
 def solution(s):
     dict_s = {}
     answer = []
