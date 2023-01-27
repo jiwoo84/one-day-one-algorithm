@@ -1,0 +1,24 @@
+// 알파벳이 순서에 따라 숫자로 변환될 때, 숫자로 된 문자열을 알파벳으로 변환할 수 있는 경우의 수를 구하시오.
+// 재귀 -> 시간초과, DP로 풀어야 함
+
+var numDecodings = function(s) {
+    
+    if(s.charAt(0) === '0' || s.length === 0) return 0;
+
+    let dp = new Array(s.length+1).fill(0);
+    dp[0] = 1; // 계산을 위해 넣은 숫자
+    dp[1] = 1; // 맨 앞은 무조건 한 자리 숫자가 가능하기 때문에 1
+
+    for(let i = 2; i <= s.length; i++) {
+
+        let n = parseInt(s.slice(i-1, i));
+        let nn = parseInt(s.slice(i-2, i));
+
+        // s[i]가 알파벳이 될 수 있으면 추가
+        if(n > 0 && n < 10) dp[i] += dp[i-1];
+        // s[i-1] s[i] 두 자리수가 알파벳이 될 수 있으면 추가
+        if(nn >= 10 && nn <= 26) dp[i] += dp[i-2];
+    }
+
+    return dp[s.length];
+};
