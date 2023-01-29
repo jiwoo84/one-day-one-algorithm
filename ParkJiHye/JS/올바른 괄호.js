@@ -1,17 +1,19 @@
-s = '110010101001';
-
 function solution(s) {
-  let zero = 0;
-  let loop = 0;
+  let left = 0;
+  let answer = false;
 
-  while(s !== '1') {
-    step1 = s.split('').filter((data) => data === '1');
-    one = step1.length;
-    zero += s.length - step1.length;
-    s = one.toString(2);
-    loop++;
-  }
-  return [loop, zero];
+  for (let [idx, el] of s.split("").entries()) {
+    if (el === '(') {
+      left++;
+    } 
+    else {
+      left--;
+      if (left < 0) {
+        break;
+      }
+      if (left === 0 && idx === s.length - 1) {
+        answer = true;
+      }
+    }
+  return answer;
 }
-
-solution(s);
