@@ -1,5 +1,3 @@
-s = '110010101001';
-
 function solution(s) {
   let zero = 0;
   let loop = 0;
@@ -13,5 +11,3 @@ function solution(s) {
   }
   return [loop, zero];
 }
-
-solution(s);
