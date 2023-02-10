@@ -6,7 +6,7 @@ var addTwoNumbers = function(l1, l2) {
     let sum = 0;
     let up;
 
-    while(l1 || 12 || sum > 0) {
+    while(l1 || l2 || sum > 0) {
         if(l1) {
             sum += l1.val;
             l1 = l1.next;
